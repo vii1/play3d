@@ -9,7 +9,7 @@
 
     function compilar() {
         var code = editor.getValue();
-        win.postMessage(code, window.origin == 'null' ? '*' : window.origin);
+        win.postMessage(code, '*');
     }
 
     document.getElementById('botonCompilar').addEventListener("click", compilar);

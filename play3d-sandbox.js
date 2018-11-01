@@ -75,6 +75,6 @@ window.addEventListener('message', function(e) {
     } catch( err ) {
         result = err.stack;
     }
-    mainWindow.postMessage(result, window.origin == 'null' ? '*' : window.origin);
+    mainWindow.postMessage(result, '*');
     RT.render();
 });
