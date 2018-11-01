@@ -1,0 +1,46 @@
+body {
+  overflow: hidden;
+  background-color: black;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
+  height: 100vh;
+  display: grid;  
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "toolbar  viewport"
+    "editor   viewport"
+    "errors   viewport";
+}
+
+#tools {
+  margin-bottom: 0.1rem;
+  grid-area: toolbar;
+}
+
+#editor {
+  margin: 0;        /*position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;*/
+  font-size: 12pt;
+  grid-area: editor;
+}
+
+#errors {
+  background-color: #800000;
+  color: #d0e0a0;
+  margin-bottom: 0.1rem;
+  grid-area: errors;
+}
+
+#viewport {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  grid-area: viewport;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
