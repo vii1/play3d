@@ -9,7 +9,7 @@
 
     function compilar() {
         var code = editor.getValue();
-        win.postMessage(code);
+        win.postMessage(code, window.origin == 'null' ? '*' : window.origin);
     }
 
     document.getElementById('botonCompilar').addEventListener("click", compilar);
@@ -36,4 +36,10 @@
         '<script type="text/javascript" src="play3d-sandbox.js"></script>' +
         '</body></html>');
 
+    window.addEventListener('keydown', function(e) {
+        if(e.altKey && e.key == "Enter") {
+            compilar();
+        }
+    });
+    setTimeout(compilar, 500);    
 }());
