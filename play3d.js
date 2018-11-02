@@ -30,8 +30,8 @@
     iframe.setAttribute('srcdoc',
         '<!DOCTYPE html><html><head><title></title>' +
         '<link rel="stylesheet" type="text/css" href="sandbox.css">' +
-        '<script type="text/javascript" src="three.min.js"></script>' +
-        '<script type="text/javascript" src="controls/OrbitControls.js"></script>' +
+        '<script type="text/javascript" src="lib/three.min.js"></script>' +
+        '<script type="text/javascript" src="lib/controls/OrbitControls.js"></script>' +
         '</head><body>' +
         '<script type="text/javascript" src="play3d-sandbox.js"></script>' +
         '</body></html>');
