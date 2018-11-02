@@ -41,5 +41,5 @@
             compilar();
         }
     });
-    setTimeout(compilar, 500);    
+    window.addEventListener('load', compilar);
 }());
