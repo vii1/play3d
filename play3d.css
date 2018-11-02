@@ -16,14 +16,13 @@ body {
 #tools {
   margin-bottom: 0.1rem;
   grid-area: toolbar;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to bottom, #333333 0%, #000000 100%);  
 }
 
 #editor {
-  margin: 0;        /*position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;*/
+  margin: 0;
   font-size: 12pt;
   grid-area: editor;
 }
@@ -43,4 +42,91 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+}
+
+#menus {
+  margin: 0 1rem;
+  color: #eee;
+  overflow: visible;
+  z-index: 20;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+/* top level */
+#menus ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+}
+
+#menus ul li {
+  position: relative;
+  cursor: pointer;
+  padding: .2rem .5rem;
+  text-shadow: -1px -1px 0px rgba(0,0,0,.4);
+}
+
+#menus li:hover {
+  background: linear-gradient(to bottom, #099 0%, #066 100%);
+}
+
+/* first level */
+#menus ul ul {
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(-50%) scaleY(0);
+  visibility: hidden;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  background: #444;
+  box-shadow: 2pt 2pt 10pt #000;
+}
+
+#menus ul li:hover:not(:active) > ul {
+  opacity: 1;
+  top: 100%;  
+  transform: none;
+  visibility: visible;
+}
+
+#menus ul ul li {
+  padding: 3pt 1em;
+  min-width: 6em;
+}
+
+#menus ul a {
+  text-decoration: none;
+  display: block;
+  color: #eee;
+}
+
+/* submenus */
+#menus .sub {
+  padding-right: 2em;
+}
+
+#menus .sub::after {
+  content: "▶";
+  position: absolute;  
+  right: 0.5rem;
+  top: 0.25em;
+  transform: scale(.5,.8);
+}
+
+/* second level */
+#menus ul ul ul {
+  top: 0%;
+  left: 100%;
+}
+
+#menus ul ul li:hover:not(:active) > ul {
+  top: 0%;
+  opacity: 1;
+  visibility: visible;
 }

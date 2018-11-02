@@ -5,10 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>play3d</title>
     <link rel="stylesheet" type="text/css" media="screen" href="play3d.css">
+    <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
     <div id="tools">
       <button id="botonCompilar" title="Run (ALT+ENTER)">&#9654; Run</button>
+      <div id="menus">
+        <ul>
+          <li>Geometry
+            <ul>
+              <li><a href="#geometry/box">Box</a></li>
+              <li><a href="#geometry/sphere">Sphereasdhbaksjdhaks aksjdh asdj</a></li>
+              <li class="sub">Other
+                <ul>
+                  <li><a href="#geometry/cylinder">Cylinder</a></li>
+                  <li><a href="#geometry/cone">Cone</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Material
+            <ul>
+              <li><a href="#material/simple">Simple</a></li>
+              <li><a href="#material/meshnormal">MeshNormal</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
       <pre id="editor">scene.add( new THREE.GridHelper( 50, 50 ));
 var geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
@@ -18,7 +41,6 @@ scene.add( mesh );
 </pre>
     <div id="errors"></div>
     <iframe id="viewport" sandbox="allow-scripts" seamless="seamless"></iframe>
-    <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
       var editor = ace.edit("editor");
       editor.setTheme("ace/theme/monokai");

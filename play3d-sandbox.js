@@ -94,7 +94,7 @@ window.addEventListener('message', function(e) {
     RT.clear3d();
     var result = null;
     try {
-        var f = new Function('scene', 'RT', 'e', e.data);
+        var f = new Function('scene', 'RT', 'e', 'window', 'document', e.data);
         f.bind({})(RT.scene);
     } catch( err ) {
         result = err.stack;

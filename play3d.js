@@ -25,6 +25,7 @@
     })
 
     if(window.origin == 'null') {
+        // needed in mozilla for running in local (file://)
         iframe.setAttribute('sandbox', iframe.getAttribute('sandbox') + ' allow-same-origin');
     }
     iframe.setAttribute('srcdoc',
@@ -41,5 +42,15 @@
             compilar();
         }
     });
-    window.addEventListener('load', compilar);
+
+    // Init menus
+    var menulinks = document.querySelectorAll('#menus a');
+    for(var l of menulinks) {
+        l.addEventListener('click', function(e) {
+            console.log(this.hash.substring(1));
+        });
+    }
+    window.addEventListener('load', function(e) {
+        compilar();
+    });
 }());
