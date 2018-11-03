@@ -44,10 +44,10 @@
     });
 
     // Init menus
-    var menulinks = document.querySelectorAll('#menus a');
+    var menulinks = document.querySelectorAll('#menus button');
     for(var l of menulinks) {
-        l.addEventListener('click', function(e) {
-            console.log(this.hash.substring(1));
+        l.addEventListener('mousedown', function(e) {
+            console.log("Click: " + this.id);
         });
     }
     window.addEventListener('load', function(e) {

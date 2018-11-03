@@ -64,12 +64,13 @@ body {
 
 #menus ul li {
   position: relative;
-  cursor: pointer;
+  cursor: default;
   padding: .2rem .5rem;
   text-shadow: -1px -1px 0px rgba(0,0,0,.4);
 }
 
-#menus li:hover {
+#menus li:hover,
+#menus button:hover {
   background: linear-gradient(to bottom, #099 0%, #066 100%);
 }
 
@@ -96,18 +97,27 @@ body {
 }
 
 #menus ul ul li {
-  padding: 3pt 1em;
+  padding: 0;
   min-width: 6em;
 }
 
-#menus ul a {
+#menus ul button {
   text-decoration: none;
   display: block;
+  padding: 3pt 1em;
+  width: 100%;
+  margin: 0;
   color: #eee;
+  background: inherit;
+  border: none;
+  text-align: inherit;
+  text-shadow: inherit;
+  font: inherit;
 }
 
 /* submenus */
 #menus .sub {
+  padding: 3pt 1em;
   padding-right: 2em;
 }
 
